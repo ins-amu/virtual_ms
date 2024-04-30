@@ -14,7 +14,7 @@ latex/
 vms.egg-info/
 
 sbi-logs/
-
+vms/sl_sdde.py
 _e/
 
 *_wrap.cpp

@@ -8,7 +8,72 @@ import seaborn as sns
 from copy import copy
 from scipy import signal
 from os.path import join
+from scipy.stats import gaussian_kde
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+
+def normalize_theta(theta, a=[800.0, 2.5], b=[1800.0, 30.0]):
+    '''
+    Normalize the parameters to the range [0, 1]
+
+    Parameters
+    ----------
+    theta : torch.tensor
+        Parameters to be normalized
+    a : list
+        Lower bound of the parameters
+    b : list
+        Upper bound of the parameters
+
+    Returns
+    -------
+    theta_norm : torch.tensor
+        Normalized parameters
+    '''
+    theta_norm = torch.zeros(theta.shape)
+    for i in range(theta.shape[1]):
+        theta_norm[:, i] = (theta[:, i] - a[i]) / (b[i] - a[i])
+    return theta_norm
+
+def denormalize_theta(theta, a=[800.0, 2.5], b=[1800.0, 30.0]):
+    '''
+    Denormalize the parameters to the range [a, b]
+
+    Parameters
+    ----------
+    theta : torch.tensor
+        Parameters to be denormalized
+    a : list
+        Lower bound of the parameters
+    b : list
+        Upper bound of the parameters
+
+    Returns
+    -------
+    theta_denorm : torch.tensor
+        Denormalized parameters
+    '''
+    theta_denorm = torch.zeros(theta.shape)
+    for i in range(theta.shape[1]):
+        theta_denorm[:, i] = theta[:, i] * (b[i] - a[i]) + a[i]
+    return theta_denorm
+
+
+def joint_dist(ax, samples, limits=[(0., 1.), (0.0, 1.0)]):
+    density = gaussian_kde(samples[:, [1, 0]].T, bw_method='scott')
+    col = 1
+    row = 0
+    X, Y = np.meshgrid(
+        np.linspace(limits[col][0], limits[col][1], 50,),
+        np.linspace(limits[row][0], limits[row][1], 50))
+    positions = np.vstack([X.ravel(), Y.ravel()])
+    Z = np.reshape(density(positions).T, X.shape)
+    ax.imshow(Z, extent=(limits[col][0], limits[col][1],
+                         limits[row][0], limits[row][1]),
+              origin="lower",
+              aspect="auto")
+    return ax
+
 
 
 def plot_ts(t, y, figsize=(15, 3.5), step=1, **kwargs):
