@@ -1,0 +1,11 @@
+wheel
+numpy
+pandas
+scipy
+numba
+matplotlib
+sbi
+seaborn
+scikit-learn
+# conda install -n vms ipykernel --update-deps --force-reinstall
+# conda install pytorch::pytorch
