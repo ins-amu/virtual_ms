@@ -8,10 +8,6 @@ This repository contains the code and data accompanying the paper **"The Virtual
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Data](#data)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Installation
 
