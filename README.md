@@ -1,7 +1,9 @@
 # The Virtual Multiple Sclerosis Patient
 
 ## Introduction
-This repository contains the code and data accompanying the paper **"The Virtual Multiple Sclerosis Patient"**. .
+This repository contains the code and data accompanying the paper **"The Virtual Multiple Sclerosis Patient"**. 
+
+Sorrentino, P., Pathak, A., Ziaeemehr, A., Lopez, E.T., Cipriano, L., Romano, A., Sparaco, M., Quarantelli, M., Banerjee, A., Sorrentino, G. and Jirsa, V., 2024. The virtual multiple sclerosis patient. [iScience](https://www.cell.com/iscience/fulltext/S2589-0042(24)01326-9), 27(7).
 
 ## Table of Contents
 - [Installation](#installation)
