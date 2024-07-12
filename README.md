@@ -4,8 +4,6 @@
 This repository contains the code and data accompanying the paper **"The Virtual Multiple Sclerosis Patient"**. .
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
 
