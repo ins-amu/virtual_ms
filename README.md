@@ -23,4 +23,6 @@ pip install -e .
 ```
 
 ## Usage
-To see the usage please look at the notebooks of [forward_modeling.ipynb](https://github.com/ins-amu/virtual_ms/blob/main/notebooks/forward_modeling.ipynb) and [inverse_modeling.ipynb](https://github.com/ins-amu/virtual_ms/blob/main/notebooks/inverse_modeling.ipynb).
+To see the usage please look at the notebooks: 
+- [forward_modeling.ipynb](https://github.com/ins-amu/virtual_ms/blob/main/notebooks/forward_modeling.ipynb) 
+- [inverse_modeling.ipynb](https://github.com/ins-amu/virtual_ms/blob/main/notebooks/inverse_modeling.ipynb).
